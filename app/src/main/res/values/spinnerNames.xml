@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="names_array">
-        <item>A</item>
-        <item>B</item>
+        <item>Nouns starting with A</item>
+        <item>Nouns starting with B</item>
     </string-array>
 </resources>
