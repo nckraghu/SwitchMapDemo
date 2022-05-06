@@ -50,6 +50,18 @@ class Repository() {
         return nounsWithSelection
     }
 
+    fun loadMoreNames() {
+        if (selectedName.value == "A") {
+            nounsWithSelection.value = NounList.nounsWithA.joinToString() + ", " + NounList.moreNounsWithA.joinToString()
+        }
+        else if(selectedName.value == "B"){
+            nounsWithSelection.value = NounList.nounsWithB.joinToString() + ", " + NounList.moreNounsWithB.joinToString()
+        }
+        else {
+            nounsWithSelection.value = ""
+        }
+    }
+
     companion object {
 
         private var REPOSITORY: Repository? = null

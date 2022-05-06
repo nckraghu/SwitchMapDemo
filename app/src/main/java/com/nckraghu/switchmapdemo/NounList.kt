@@ -29,5 +29,35 @@ class NounList {
             "band"
         )
 
+        val moreNounsWithA = arrayOf<String>(
+            "aluminum",
+            "amazement",
+            "amazon",
+            "ambassador",
+            "ambience",
+            "ambiguity",
+            "ambition",
+            "amendment",
+            "amenity",
+            "ammunition",
+            "amount",
+            "anagram",
+            "analogue",
+            "analysis"
+        )
+
+        val moreNounsWithB = arrayOf<String>(
+            "beginning",
+            "behalf",
+            "behavior",
+            "behest",
+            "belief",
+            "bell",
+            "bench",
+            "benefit",
+            "berry",
+            "bestseller"
+        )
+
     }
 }

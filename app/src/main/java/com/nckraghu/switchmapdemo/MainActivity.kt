@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener  {
 
         _binding.nameSpinner.onItemSelectedListener = this
 
+        _binding.loadMoreBtn.setOnClickListener {
+            switchMapViewModel.loadMoreNames()
+        }
+
         switchMapViewModel = SwitchMapViewModel(Repository.getRepositoryInstance())
 
         switchMapViewModel.nameLength.observe(this) {

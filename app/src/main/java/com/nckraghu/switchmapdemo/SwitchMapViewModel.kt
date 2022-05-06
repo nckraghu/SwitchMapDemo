@@ -39,4 +39,8 @@ class SwitchMapViewModel(private val repository: Repository): ViewModel() {
         repository.setSelectedName(s)
     }
 
+    fun loadMoreNames() {
+        repository.loadMoreNames()
+    }
+
 }
