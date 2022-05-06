@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SwitchMapDemo</string>
-    <string name="more">More</string>
+    <string name="more">Load More</string>
+    <string name="select_a_letter">Select a letter</string>
 </resources>
