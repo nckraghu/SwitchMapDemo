@@ -46,6 +46,49 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener  {
             _binding.nameList.text = it
         }
 
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.names_array,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            _binding.nameSpinner2.adapter = adapter
+        }
+
+        _binding.nameSpinner2.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                if (position == 0) {
+                    //A is selected
+                    switchMapViewModel.setSelectedName2("A")
+                }
+                else {
+                    switchMapViewModel.setSelectedName2("B")
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                switchMapViewModel.setSelectedName2("")
+            }
+
+        }
+
+        _binding.loadMoreBtn2.setOnClickListener {
+            switchMapViewModel.loadMoreNames2()
+        }
+
+        switchMapViewModel = SwitchMapViewModel(Repository.getRepositoryInstance())
+
+        switchMapViewModel.nameList2.observe(this) {
+            _binding.nameList2.text = it
+        }
+
     }
 
     override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
