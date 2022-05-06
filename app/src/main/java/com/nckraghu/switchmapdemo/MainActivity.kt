@@ -42,42 +42,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener  {
 
         switchMapViewModel = SwitchMapViewModel(Repository.getRepositoryInstance())
 
-        switchMapViewModel.nameLength.observe(this) {
-            _binding.nameLengthTextView.text = "Name is of length ${it.toString()}"
-        }
-
-        switchMapViewModel.customNameLength.observe(this) {
-            _binding.customNameLengthTextView.text = "Custom name is of length ${it.toString()}"
-        }
-
-        switchMapViewModel.wrongNameLength.observe(this) {
-            _binding.wrongNameLengthTextView.text = "Wrong name is of length ${it.toString()}"
-        }
-
-
-        switchMapViewModel.wrongNameLength.observe(this) {
-
-        }
-
         switchMapViewModel.nameList.observe(this) {
             _binding.nameList.text = it
         }
 
-        _binding.editTextTextPersonName.addTextChangedListener(object: TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-//                TODO("Not yet implemented")
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-//                TODO("Not yet implemented")
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                val userName = _binding.editTextTextPersonName.text.toString()
-                switchMapViewModel.setUserName(userName)
-            }
-
-        })
     }
 
     override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
