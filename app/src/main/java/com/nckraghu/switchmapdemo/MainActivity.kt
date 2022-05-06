@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import com.nckraghu.switchmapdemo.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener  {
 
     private lateinit var switchMapViewModel: SwitchMapViewModel
 
@@ -20,6 +22,19 @@ class MainActivity : AppCompatActivity() {
 
         val view: View = _binding.root
         setContentView(view)
+
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.names_array,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            _binding.nameSpinner.adapter = adapter
+        }
+
+        _binding.nameSpinner.onItemSelectedListener = this
 
         switchMapViewModel = SwitchMapViewModel(Repository.getRepositoryInstance())
 
@@ -40,6 +55,10 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        switchMapViewModel.nameList.observe(this) {
+            _binding.nameList.text = it
+        }
+
         _binding.editTextTextPersonName.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 //                TODO("Not yet implemented")
@@ -55,6 +74,21 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
+        // An item was selected. You can retrieve the selected item using
+        if (pos == 0) {
+            //A is selected
+            switchMapViewModel.setSelectedName("A")
+        }
+        else {
+            switchMapViewModel.setSelectedName("B")
+        }
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>) {
+        switchMapViewModel.setSelectedName("")
     }
 
 

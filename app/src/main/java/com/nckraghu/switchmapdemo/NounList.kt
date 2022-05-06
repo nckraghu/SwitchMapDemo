@@ -2,30 +2,32 @@ package com.nckraghu.switchmapdemo
 
 class NounList {
 
-    val nounsWithA = arrayOf<String>(
-        "abacus",
-        "abbreviation",
-        "ability",
-        "abnormality",
-        "absence",
-        "abundance",
-        "academics",
-        "accent",
-        "access",
-        "accommodation"
-    )
+    companion object {
+        val nounsWithA = arrayOf<String>(
+            "abacus",
+            "abbreviation",
+            "ability",
+            "abnormality",
+            "absence",
+            "abundance",
+            "academics",
+            "accent",
+            "access",
+            "accommodation"
+        )
 
-    val nounsWithB = arrayOf<String>(
-        "back",
-        "background",
-        "backpack",
-        "backup",
-        "badge",
-        "bag",
-        "bagel",
-        "bait",
-        "bake",
-        "band"
-    )
+        val nounsWithB = arrayOf<String>(
+            "back",
+            "background",
+            "backpack",
+            "backup",
+            "badge",
+            "bag",
+            "bagel",
+            "bait",
+            "bake",
+            "band"
+        )
 
+    }
 }

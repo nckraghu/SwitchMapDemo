@@ -28,4 +28,15 @@ class SwitchMapViewModel(private val repository: Repository): ViewModel() {
         repository.setUserName(string)
     }
 
+
+    private val selectedName: LiveData<String> = repository.getSelectedName()
+
+    val nameList: LiveData<String> = Transformations.switchMap(selectedName) {
+        repository.getNamesWithSelection(it)
+    }
+
+    fun setSelectedName(s: String) {
+        repository.setSelectedName(s)
+    }
+
 }

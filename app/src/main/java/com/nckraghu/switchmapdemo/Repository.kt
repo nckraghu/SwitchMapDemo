@@ -2,6 +2,7 @@ package com.nckraghu.switchmapdemo
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import java.util.*
 
 class Repository() {
 
@@ -21,6 +22,32 @@ class Repository() {
 
     fun getUserName(): LiveData<String> {
         return userName
+    }
+
+    private val selectedName: MutableLiveData<String> = MutableLiveData()
+
+    private val nounsWithSelection: MutableLiveData<String> = MutableLiveData()
+
+    fun setSelectedName(s: String) {
+        selectedName.value = s
+    }
+
+    fun getSelectedName(): LiveData<String> {
+        return selectedName
+    }
+
+    fun getNamesWithSelection(s: String): LiveData<String> {
+        if(s == "A") {
+            nounsWithSelection.value = NounList.nounsWithA.joinToString()
+        }
+        else if(s == "B") {
+            nounsWithSelection.value = NounList.nounsWithB.joinToString()
+        }
+        else {
+            nounsWithSelection.value = ""
+        }
+
+        return nounsWithSelection
     }
 
     companion object {
