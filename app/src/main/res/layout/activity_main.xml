@@ -10,27 +10,38 @@
     android:paddingBottom="20dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/spinner_text_view"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/nameSpinnerCardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:text="@string/select_a_letter"
-        app:layout_constraintBottom_toTopOf="@id/nameSpinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <Spinner
-        android:id="@+id/nameSpinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@id/load_more_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_text_view" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+
+        android:layout_marginTop="10dp"
+
+        android:padding="8dp"
+        android:elevation="4dp"
+
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/purple_200"
+        app:cardCornerRadius="4dp"
+    >
+
+        <Spinner
+            android:id="@+id/nameSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:outlineProvider="bounds"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
+<!--    android:background="@drawable/blue_outline"-->
 
     <Button
         android:id="@+id/load_more_btn"
@@ -40,7 +51,7 @@
         android:text="@string/more"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameSpinner"
+        app:layout_constraintTop_toBottomOf="@id/nameSpinnerCardView"
         app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
         />
 
@@ -50,7 +61,7 @@
         android:layout_height="wrap_content"
         android:minHeight="40dp"
         android:maxLines="4"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="40dp"
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,38 +76,44 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.4" />
 
-
-    <TextView
-        android:id="@+id/spinner_text_view2"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/nameSpinnerCardView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:text="@string/select_a_letter"
-        app:layout_constraintBottom_toTopOf="@id/nameSpinner2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <Spinner
-        android:id="@+id/nameSpinner2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toTopOf="@id/load_more_btn2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_text_view2" />
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline"
+        app:layout_constraintVertical_chainStyle="packed"
+
+        android:layout_marginTop="10dp"
+
+        android:padding="8dp"
+        android:elevation="4dp"
+
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/purple_200"
+        app:cardCornerRadius="4dp"
+        >
+
+        <Spinner
+            android:id="@+id/nameSpinner2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
 
     <Button
         android:id="@+id/load_more_btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/more"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameSpinner2"
+        app:layout_constraintTop_toBottomOf="@id/nameSpinnerCardView2"
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
@@ -104,6 +121,11 @@
         android:id="@+id/nameList2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:maxLines="4"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/load_more_btn2"
