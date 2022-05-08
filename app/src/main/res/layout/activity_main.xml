@@ -10,6 +10,20 @@
     android:paddingBottom="20dp"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/correctSwitchMapTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/correct_switchmap_text"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nameSpinnerCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:layout_editor_absoluteY="395dp" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/nameSpinnerCardView"
         android:layout_width="wrap_content"
@@ -17,10 +31,9 @@
         app:layout_constraintBottom_toTopOf="@id/load_more_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/correctSwitchMapTextView"
 
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
 
         android:padding="8dp"
         android:elevation="4dp"
@@ -74,7 +87,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_begin="297dp" />
+
+
+    <View
+        android:id="@+id/horizontal_divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:visibility="invisible"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/incorrectSwitchMapTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/incorrect_switchmap_text"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_divider"
+        app:layout_constraintBottom_toTopOf="@id/nameSpinnerCardView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:layout_editor_absoluteY="395dp" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/nameSpinnerCardView2"
@@ -83,10 +123,9 @@
         app:layout_constraintBottom_toTopOf="@id/load_more_btn2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline"
-        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/incorrectSwitchMapTextView"
 
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
 
         android:padding="8dp"
         android:elevation="4dp"
