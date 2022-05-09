@@ -5,18 +5,18 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import com.nckraghu.switchmapdemo.databinding.ActivityMainBinding
+import com.nckraghu.switchmapdemo.databinding.ActivitySwitchMapDemoBinding
 
-class MainActivity : AppCompatActivity() {
+class SwitchMapDemoActivity : AppCompatActivity() {
 
     private lateinit var switchMapViewModel: SwitchMapViewModel
 
-    private lateinit var _binding: ActivityMainBinding
+    private lateinit var _binding: ActivitySwitchMapDemoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        _binding = ActivityMainBinding.inflate(layoutInflater)
+        _binding = ActivitySwitchMapDemoBinding.inflate(layoutInflater)
 
         val view: View = _binding.root
         setContentView(view)
