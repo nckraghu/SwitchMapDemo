@@ -75,7 +75,6 @@ class CustomTransformations {
                 }
             })
 
-//            return newLiveData
             return result
         }
 

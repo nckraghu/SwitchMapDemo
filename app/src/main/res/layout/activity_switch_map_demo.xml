@@ -18,14 +18,14 @@
         android:text="@string/correct_switchmap_text"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/name_spinner_card_view"
+        app:layout_constraintBottom_toTopOf="@id/noun_spinner_card_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         tools:layout_editor_absoluteY="395dp" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/name_spinner_card_view"
+        android:id="@+id/noun_spinner_card_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/load_more_btn"
@@ -63,7 +63,7 @@
         android:text="@string/more"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_spinner_card_view"
+        app:layout_constraintTop_toBottomOf="@id/noun_spinner_card_view"
         app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
         />
 

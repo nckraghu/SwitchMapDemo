@@ -22,12 +22,12 @@ class SwitchMapViewModel(private val repository: Repository): ViewModel() {
         repository.setSelectedLetter(letterL)
     }
 
-    fun loadMoreNouns() {
-        repository.loadMoreNouns()
-    }
-
     fun setSelectedLetter2(letterL: String) {
         repository.setSelectedLetter2(letterL)
+    }
+
+    fun loadMoreNouns() {
+        repository.loadMoreNouns()
     }
 
     fun loadMoreNoun2() {
