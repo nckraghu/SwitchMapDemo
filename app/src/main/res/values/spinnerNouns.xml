@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="names_array">
+    <string-array name="nouns_array">
         <item>Nouns starting with A</item>
         <item>Nouns starting with B</item>
     </string-array>

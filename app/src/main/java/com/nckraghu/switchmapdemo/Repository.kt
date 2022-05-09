@@ -2,31 +2,30 @@ package com.nckraghu.switchmapdemo
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import java.util.*
 
 class Repository() {
 
-    private val selectedName: MutableLiveData<String> = MutableLiveData()
+    private val selectedLetter: MutableLiveData<String> = MutableLiveData()
 
-    private val selectedName2: MutableLiveData<String> = MutableLiveData()
+    private val selectedLetter2: MutableLiveData<String> = MutableLiveData()
 
     private val nounsWithSelection: MutableLiveData<String> = MutableLiveData()
 
     private val nounsWithSelection2: MutableLiveData<String> = MutableLiveData()
 
-    fun setSelectedName(s: String) {
-        selectedName.value = s
+    fun setSelectedLetter(s: String) {
+        selectedLetter.value = s
     }
 
-    fun getSelectedName(): LiveData<String> {
-        return selectedName
+    fun getSelectedLetter(): LiveData<String> {
+        return selectedLetter
     }
 
-    fun getNamesWithSelection(s: String): LiveData<String> {
-        if(s == "A") {
+    fun getNounsWithSelection(letterL: String): LiveData<String> {
+        if(letterL == "A") {
             nounsWithSelection.value = NounList.nounsWithA.joinToString()
         }
-        else if(s == "B") {
+        else if(letterL == "B") {
             nounsWithSelection.value = NounList.nounsWithB.joinToString()
         }
         else {
@@ -36,11 +35,11 @@ class Repository() {
         return nounsWithSelection
     }
 
-    fun loadMoreNames() {
-        if (selectedName.value == "A") {
+    fun loadMoreNouns() {
+        if (selectedLetter.value == "A") {
             nounsWithSelection.value = NounList.nounsWithA.joinToString() + ", " + NounList.moreNounsWithA.joinToString()
         }
-        else if(selectedName.value == "B"){
+        else if(selectedLetter.value == "B"){
             nounsWithSelection.value = NounList.nounsWithB.joinToString() + ", " + NounList.moreNounsWithB.joinToString()
         }
         else {
@@ -48,19 +47,19 @@ class Repository() {
         }
     }
 
-    fun setSelectedName2(s: String) {
-        selectedName2.value = s
+    fun setSelectedLetter2(s: String) {
+        selectedLetter2.value = s
     }
 
-    fun getSelectedName2(): LiveData<String> {
-        return selectedName2
+    fun getSelectedLetter2(): LiveData<String> {
+        return selectedLetter2
     }
 
-    fun loadMoreNames2() {
-        if (selectedName2.value == "A") {
+    fun loadMoreNouns2() {
+        if (selectedLetter2.value == "A") {
             nounsWithSelection2.value = NounList.nounsWithA.joinToString() + ", " + NounList.moreNounsWithA.joinToString()
         }
-        else if(selectedName2.value == "B"){
+        else if(selectedLetter2.value == "B"){
             nounsWithSelection2.value = NounList.nounsWithB.joinToString() + ", " + NounList.moreNounsWithB.joinToString()
         }
         else {
@@ -68,12 +67,12 @@ class Repository() {
         }
     }
 
-    fun getNamesWithSelection2(s: String): LiveData<String> {
+    fun getNounsWithSelection2(letterL: String): LiveData<String> {
 
-        if(s == "A") {
+        if(letterL == "A") {
             nounsWithSelection2.value = NounList.nounsWithA.joinToString()
         }
-        else if(s == "B") {
+        else if(letterL == "B") {
             nounsWithSelection2.value = NounList.nounsWithB.joinToString()
         }
         else {

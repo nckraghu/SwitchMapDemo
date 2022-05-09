@@ -1,39 +1,37 @@
 package com.nckraghu.switchmapdemo
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 
 class SwitchMapViewModel(private val repository: Repository): ViewModel() {
 
 
-    private val selectedName: LiveData<String> = repository.getSelectedName()
+    private val selectedLetter: LiveData<String> = repository.getSelectedLetter()
 
-    private val selectedName2: LiveData<String> = repository.getSelectedName2()
+    private val selectedLetter2: LiveData<String> = repository.getSelectedLetter2()
 
-    val nameList: LiveData<String> = CustomTransformations.customSwitchMap(selectedName) {
-        repository.getNamesWithSelection(it)
+    val nounList: LiveData<String> = CustomTransformations.correctSwitchMap(selectedLetter) {
+        repository.getNounsWithSelection(it)
     }
 
-    val nameList2: LiveData<String> = CustomTransformations.wrongSwitchMap(selectedName2) {
-        repository.getNamesWithSelection2(it)
+    val nounList2: LiveData<String> = CustomTransformations.incorrectSwitchMap(selectedLetter2) {
+        repository.getNounsWithSelection2(it)
     }
 
-    fun setSelectedName(s: String) {
-        repository.setSelectedName(s)
+    fun setSelectedLetter(letterL: String) {
+        repository.setSelectedLetter(letterL)
     }
 
-    fun loadMoreNames() {
-        repository.loadMoreNames()
+    fun loadMoreNouns() {
+        repository.loadMoreNouns()
     }
 
-    fun setSelectedName2(s: String) {
-        repository.setSelectedName2(s)
+    fun setSelectedLetter2(letterL: String) {
+        repository.setSelectedLetter2(letterL)
     }
 
-    fun loadMoreNames2() {
-        repository.loadMoreNames2()
+    fun loadMoreNoun2() {
+        repository.loadMoreNouns2()
     }
 
 }

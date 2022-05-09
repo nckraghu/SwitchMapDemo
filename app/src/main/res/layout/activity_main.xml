@@ -11,27 +11,27 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/correctSwitchMapTextView"
+        android:id="@+id/correct_switch_map_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:text="@string/correct_switchmap_text"
         android:layout_marginTop="10dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/nameSpinnerCardView"
+        app:layout_constraintBottom_toTopOf="@id/name_spinner_card_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         tools:layout_editor_absoluteY="395dp" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/nameSpinnerCardView"
+        android:id="@+id/name_spinner_card_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/load_more_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/correctSwitchMapTextView"
+        app:layout_constraintTop_toBottomOf="@id/correct_switch_map_label"
 
         android:layout_marginTop="20dp"
 
@@ -44,7 +44,7 @@
     >
 
         <Spinner
-            android:id="@+id/nameSpinner"
+            android:id="@+id/noun_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -54,7 +54,6 @@
             />
 
     </com.google.android.material.card.MaterialCardView>
-<!--    android:background="@drawable/blue_outline"-->
 
     <Button
         android:id="@+id/load_more_btn"
@@ -64,12 +63,12 @@
         android:text="@string/more"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameSpinnerCardView"
+        app:layout_constraintTop_toBottomOf="@id/name_spinner_card_view"
         app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
         />
 
     <TextView
-        android:id="@+id/nameList"
+        android:id="@+id/noun_list_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="40dp"
@@ -103,27 +102,27 @@
         app:layout_constraintVertical_bias="0.4" />
 
     <TextView
-        android:id="@+id/incorrectSwitchMapTextView"
+        android:id="@+id/incorrect_switch_map_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:text="@string/incorrect_switchmap_text"
         android:layout_marginTop="0dp"
         app:layout_constraintTop_toBottomOf="@id/horizontal_divider"
-        app:layout_constraintBottom_toTopOf="@id/nameSpinnerCardView2"
+        app:layout_constraintBottom_toTopOf="@id/noun_spinner_card_view2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         tools:layout_editor_absoluteY="395dp" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/nameSpinnerCardView2"
+        android:id="@+id/noun_spinner_card_view2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/load_more_btn2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/incorrectSwitchMapTextView"
+        app:layout_constraintTop_toBottomOf="@id/incorrect_switch_map_label"
 
         android:layout_marginTop="20dp"
 
@@ -136,7 +135,7 @@
         >
 
         <Spinner
-            android:id="@+id/nameSpinner2"
+            android:id="@+id/noun_spinner2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -152,12 +151,12 @@
         android:text="@string/more"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameSpinnerCardView2"
+        app:layout_constraintTop_toBottomOf="@id/noun_spinner_card_view2"
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
     <TextView
-        android:id="@+id/nameList2"
+        android:id="@+id/noun_list_text_view2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="40dp"

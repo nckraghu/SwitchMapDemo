@@ -2,8 +2,6 @@ package com.nckraghu.switchmapdemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -25,39 +23,39 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener  {
 
         ArrayAdapter.createFromResource(
             this,
-            R.array.names_array,
+            R.array.nouns_array,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             // Apply the adapter to the spinner
-            _binding.nameSpinner.adapter = adapter
+            _binding.nounSpinner.adapter = adapter
         }
 
-        _binding.nameSpinner.onItemSelectedListener = this
+        _binding.nounSpinner.onItemSelectedListener = this
 
         _binding.loadMoreBtn.setOnClickListener {
-            switchMapViewModel.loadMoreNames()
+            switchMapViewModel.loadMoreNouns()
         }
 
         switchMapViewModel = SwitchMapViewModel(Repository.getRepositoryInstance())
 
-        switchMapViewModel.nameList.observe(this) {
-            _binding.nameList.text = it
+        switchMapViewModel.nounList.observe(this) {
+            _binding.nounListTextView.text = it
         }
 
         ArrayAdapter.createFromResource(
             this,
-            R.array.names_array,
+            R.array.nouns_array,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             // Apply the adapter to the spinner
-            _binding.nameSpinner2.adapter = adapter
+            _binding.nounSpinner2.adapter = adapter
         }
 
-        _binding.nameSpinner2.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+        _binding.nounSpinner2.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
@@ -66,27 +64,27 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener  {
             ) {
                 if (position == 0) {
                     //A is selected
-                    switchMapViewModel.setSelectedName2("A")
+                    switchMapViewModel.setSelectedLetter2("A")
                 }
                 else {
-                    switchMapViewModel.setSelectedName2("B")
+                    switchMapViewModel.setSelectedLetter2("B")
                 }
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                switchMapViewModel.setSelectedName2("")
+                switchMapViewModel.setSelectedLetter2("")
             }
 
         }
 
         _binding.loadMoreBtn2.setOnClickListener {
-            switchMapViewModel.loadMoreNames2()
+            switchMapViewModel.loadMoreNoun2()
         }
 
         switchMapViewModel = SwitchMapViewModel(Repository.getRepositoryInstance())
 
-        switchMapViewModel.nameList2.observe(this) {
-            _binding.nameList2.text = it
+        switchMapViewModel.nounList2.observe(this) {
+            _binding.nounListTextView2.text = it
         }
 
     }
@@ -95,15 +93,15 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener  {
         // An item was selected. You can retrieve the selected item using
         if (pos == 0) {
             //A is selected
-            switchMapViewModel.setSelectedName("A")
+            switchMapViewModel.setSelectedLetter("A")
         }
         else {
-            switchMapViewModel.setSelectedName("B")
+            switchMapViewModel.setSelectedLetter("B")
         }
     }
 
     override fun onNothingSelected(parent: AdapterView<*>) {
-        switchMapViewModel.setSelectedName("")
+        switchMapViewModel.setSelectedLetter("")
     }
 
 

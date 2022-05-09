@@ -10,7 +10,7 @@ class CustomTransformations {
 
     companion object {
         @MainThread
-        fun <X, Y> customSwitchMap(
+        fun <X, Y> correctSwitchMap(
             source: LiveData<X>,
             switchMapFunction: Function<X, LiveData<Y>>
         ): LiveData<Y> {
@@ -43,7 +43,7 @@ class CustomTransformations {
         }
 
         @MainThread
-        fun <X, Y> wrongSwitchMap(
+        fun <X, Y> incorrectSwitchMap(
             source: LiveData<X>,
             switchMapFunction: Function<X, LiveData<Y>>
         ): LiveData<Y> {
