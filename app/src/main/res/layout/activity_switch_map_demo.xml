@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="20dp"
-    android:paddingTop="20dp"
-    android:paddingRight="20dp"
-    android:paddingBottom="20dp"
+    style="@style/constraint_layout_padding_style"
     tools:context=".SwitchMapDemoActivity">
 
     <TextView
@@ -32,25 +29,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/correct_switch_map_label"
-
-        android:layout_marginTop="20dp"
-
-        android:padding="8dp"
-        android:elevation="4dp"
-
         app:strokeWidth="1dp"
         app:strokeColor="@color/purple_200"
         app:cardCornerRadius="4dp"
+        style="@style/noun_spinner_card_view_style"
     >
 
         <Spinner
             android:id="@+id/noun_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:gravity="center"
-            android:outlineProvider="bounds"
+            style="@style/noun_spinner_style"
             />
 
     </com.google.android.material.card.MaterialCardView>
@@ -71,14 +60,10 @@
         android:id="@+id/noun_list_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="40dp"
-        android:maxLines="4"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="40dp"
-        android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/load_more_btn"
+        style="@style/noun_list_text_view_style"
         />
 
     <androidx.constraintlayout.widget.Guideline
@@ -87,7 +72,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
-
 
     <View
         android:id="@+id/horizontal_divider"
@@ -123,22 +107,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/incorrect_switch_map_label"
-
-        android:layout_marginTop="20dp"
-
-        android:padding="8dp"
-        android:elevation="4dp"
-
         app:strokeWidth="1dp"
         app:strokeColor="@color/purple_200"
         app:cardCornerRadius="4dp"
+        style="@style/noun_spinner_card_view_style"
         >
 
         <Spinner
             android:id="@+id/noun_spinner2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            style="@style/noun_spinner_style"
             />
 
     </com.google.android.material.card.MaterialCardView>
@@ -159,14 +138,10 @@
         android:id="@+id/noun_list_text_view2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="40dp"
-        android:maxLines="4"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="40dp"
-        android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/load_more_btn2"
+        style="@style/noun_list_text_view_style"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
